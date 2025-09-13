@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    type: dashboard
+    owner:
+      name: 'CEO'
+      email: 'ceo@jaffleshop.com'
+    
+    label: "Executive Taxi Insights"
+    description: "Daily and hourly performance metrics for the taxi fleet."
+
+    depends_on:
+      - ref('hourly_pickups')
+      - ref('busiest_pickup_zones')

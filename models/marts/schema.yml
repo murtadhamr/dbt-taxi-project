@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: busiest_pickup_zones
+    columns:
+      - name: zone_id
+        tests:
+          - not_null
+      - name: zone
+        tests:
+          - not_null
+      - name: borough
+        tests:
+          - not_null
+      - name: total_pickups
+        tests:
+          - not_null
+
+  - name: hourly_pickups
+    description: "Aggregates taxi trips to find the total number of trips for each hour of the day."
+    columns:
+      - name: pickup_hour
+        description: "The hour of the day (0-23) when the taxi trip started."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 23
+      - name: total_trips
+        description: "The total count of trips that started in this hour."
+        tests:
+          - not_null
+
+  - name: trips_by_payment_type # From our previous work
+    columns:
+      - name: payment_type_description
+        tests:
+          - not_null

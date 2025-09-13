@@ -1,0 +1,14 @@
+# Mac files
+.DS_Store
+
+# dbt artifacts
+logs/
+target/
+dbt_packages/
+
+# User-specific files
+profiles.yml
+
+# IDE files
+.idea/
+.vscode/
