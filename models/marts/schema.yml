@@ -21,8 +21,9 @@ models:
         tests:
           - not_null
           - dbt_utils.accepted_range:
-              min_value: 0
-              max_value: 23
+              args:
+                min_value: 0
+                max_value: 23
       - name: total_trips
         description: "The total count of trips that started in this hour."
         tests:
