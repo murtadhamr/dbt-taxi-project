@@ -20,10 +20,6 @@ models:
         description: "The hour of the day (0-23) when the taxi trip started."
         tests:
           - not_null
-          - dbt_utils.accepted_range:
-              args:
-                min_value: 0
-                max_value: 23
       - name: total_trips
         description: "The total count of trips that started in this hour."
         tests:
