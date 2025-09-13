@@ -3,16 +3,13 @@ version: 2
 models:
   - name: busiest_pickup_zones
     columns:
-      - name: zone_id
-        tests:
-          - not_null
-      - name: zone
+      - name: zone_name
         tests:
           - not_null
       - name: borough
         tests:
           - not_null
-      - name: total_pickups
+      - name: total_trips
         tests:
           - not_null
 

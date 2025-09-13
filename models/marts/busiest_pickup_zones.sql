@@ -1,7 +1,7 @@
 select  
     zones.zone_name,
     zones.borough,
-    count(1) as number_of_pickups
+    count(1) as total_trips
 from    
     {{ ref('stg_taxi_trips') }} as trips
 join
